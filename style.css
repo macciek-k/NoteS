@@ -1,0 +1,82 @@
+button{
+    margin-top:3px;
+    margin-bottom:25px;
+}
+
+#newNoteButton{
+    margin-top:30px;
+    width:100%;}
+button.btn-success,button.btn-warning{
+    margin-right:10px;
+}
+textarea{
+    height: 14em;
+    margin-top:10px;
+    width: 100%;
+    resize: vertical;
+    margin-bottom:15px;
+}
+#NewNoteTextarea{
+    margin-top:25px;
+}
+.row{
+    padding-top:10px;
+    padding-bottom:10px;
+}
+.readonly{
+    background-color:#e4e4e4;
+    resize: none;
+}
+.readonly:hover{
+    cursor: pointer;
+    background-color:#cfcfcf;
+    transition: background-color 0.1s;
+}
+h2{
+    margin-top:30px;
+}
+.question{
+    margin-right:5px;
+}
+.question::after{
+    content: "\a";
+    white-space: pre;
+}
+.yesButton,.noButton{
+    margin-top:10px;
+    margin-right:5px;
+}
+
+a{
+    color:#202428;
+}
+
+footer{
+    padding-top:10px;
+    padding-bottom:10px;
+    background-color:rgba(0, 0, 0, 0.048);
+}
+.row{
+    padding:0px;
+}
+
+@media (prefers-color-scheme: dark) {
+	html,body {
+        background-color: rgb(29, 29, 29);
+        color:white;
+	}
+    #NewNoteTextarea,.readonly:hover{
+        color:white;
+        background-color:rgb(40,40,40);
+        border-color:rgb(58, 58, 58);
+    }
+    .readonly{
+        color:white;
+        background-color:rgb(51, 51, 51);
+        border-color:rgb(58, 58, 58);
+    }
+    a{
+        color:white;
+    }
+    
+}

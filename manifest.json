@@ -1,0 +1,19 @@
+{
+    "name": "NoteS",
+    "icons": [
+      {
+        "src": "images/icon48.png",
+        "sizes": "48x48"
+      },        
+      {
+        "src": "images/icon96.png",
+        "sizes": "96x96"
+      },
+      {
+        "src": "images/icon128.png",
+        "sizes": "128x128"
+      }
+    ],
+    "start_url": "/",
+    "display": "standalone"
+  }

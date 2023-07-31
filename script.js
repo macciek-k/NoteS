@@ -32,14 +32,14 @@ function printEditButtons(noteId){
         btn3.setAttribute("class","btn note-buttons btn-warning");
         btn3.setAttribute("id","cancelNote");
         btn3.setAttribute("onclick","editButtonsQuestion('cancel',"+noteId+");");
-        let node3=document.createTextNode(`🗙 Cancel`);
+        let node3=document.createTextNode(`× Cancel`);
         btn3.appendChild(node3);
         document.getElementById("row"+topRow+"col0").appendChild(btn3);
     let btn2=document.createElement("button");
         btn2.setAttribute("class","btn note-buttons btn-danger");
         btn2.setAttribute("id","cancelNote");
         btn2.setAttribute("onclick","editButtonsQuestion('delete',"+noteId+");");
-        let node2=document.createTextNode(`🗙 Delete`);
+        let node2=document.createTextNode(`× Delete`);
         btn2.appendChild(node2);
         document.getElementById("row"+topRow+"col0").appendChild(btn2);
 }
@@ -57,7 +57,7 @@ function printNewNoteButtons(row,column){
         btn2.setAttribute("class","btn note-buttons btn-danger");
         btn2.setAttribute("id","cancelNote");
         btn2.setAttribute("onclick","cancelNewNoteButtonQuestion("+row+','+column+");");
-        let node2=document.createTextNode(`🗙 Cancel`);
+        let node2=document.createTextNode(`× Cancel`);
         btn2.appendChild(node2);
         document.getElementById("row"+row+"col"+column).appendChild(btn2);
 }

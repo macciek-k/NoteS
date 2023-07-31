@@ -44,6 +44,45 @@ function printEditButtons(noteId){
         document.getElementById("row"+topRow+"col0").appendChild(btn2);
 }
 
+function printNewNoteButtons(row,column){
+    removeNoteButtonsClass();
+    let btn1=document.createElement("button");
+        btn1.setAttribute("class","btn note-buttons btn-success");
+        btn1.setAttribute("id","saveNote");
+        btn1.setAttribute("onclick","saveNote("+row+","+column+");");
+        let node1=document.createTextNode(`✓ Save`);
+        btn1.appendChild(node1);
+        document.getElementById("row"+row+"col"+column).appendChild(btn1);
+    let btn2=document.createElement("button");
+        btn2.setAttribute("class","btn note-buttons btn-danger");
+        btn2.setAttribute("id","cancelNote");
+        btn2.setAttribute("onclick","cancelNewNoteButtonQuestion("+row+','+column+");");
+        let node2=document.createTextNode(`🗙 Cancel`);
+        btn2.appendChild(node2);
+        document.getElementById("row"+row+"col"+column).appendChild(btn2);
+}
+
+function cancelNewNoteButtonQuestion(row,column){
+    removeNoteButtonsClass();
+    let span=document.createElement("span");
+        span.setAttribute("class","note-buttons question");
+        let spanNode=document.createTextNode("Cancel creating new note?");
+        span.appendChild(spanNode);
+        let yesButton=document.createElement("button");
+        yesButton.setAttribute("class","btn note-buttons btn-warning yesButton");
+        yesButton.setAttribute("onclick","cancelNote();");
+        let yesBttnNode=document.createTextNode("Yes");
+        yesButton.appendChild(yesBttnNode);
+        let noButton=document.createElement("button");
+        noButton.setAttribute("class","btn note-buttons btn-secondary noButton");
+        noButton.setAttribute("onclick","printNewNoteButtons("+row+","+column+")");
+        let noBttnNode=document.createTextNode("No");
+        noButton.appendChild(noBttnNode);
+        document.getElementById("row"+topRow+"col0").appendChild(span);
+        document.getElementById("row"+topRow+"col0").appendChild(yesButton);
+        document.getElementById("row"+topRow+"col0").appendChild(noButton);
+}
+
 function editButtonsQuestion(type,noteId){
     removeNoteButtonsClass();
     let question,buttonClass,action;
@@ -120,20 +159,7 @@ function newNote(rowStr,columnStr){
         textarea.setAttribute("id","NewNoteTextarea");
         document.getElementById("row"+row+"col"+column).appendChild(textarea);
         document.getElementById("NewNoteTextarea").focus();
-    let btn1=document.createElement("button");
-        btn1.setAttribute("class","btn note-buttons btn-success");
-        btn1.setAttribute("id","saveNote");
-        btn1.setAttribute("onclick","saveNote("+row+","+column+");");
-        let node1=document.createTextNode(`✓ Save`);
-        btn1.appendChild(node1);
-        document.getElementById("row"+row+"col"+column).appendChild(btn1);
-    let btn2=document.createElement("button");
-        btn2.setAttribute("class","btn note-buttons btn-danger");
-        btn2.setAttribute("id","cancelNote");
-        btn2.setAttribute("onclick","cancelNote();");
-        let node2=document.createTextNode(`🗙 Cancel`);
-        btn2.appendChild(node2);
-        document.getElementById("row"+row+"col"+column).appendChild(btn2);
+        printNewNoteButtons(row,column);
 }
 function cancelNote(){
     document.location.reload(false);
